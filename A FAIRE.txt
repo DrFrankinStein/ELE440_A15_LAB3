@@ -1,11 +1,30 @@
-TOUR DE LONDRE
 LABIRYNTHE
 - Exploration en profondeur
 - Exploration en largeur
-Création d'une matrice d'adjacence
-- Lue a partir d'un fichier
+- interface
+	- demande pour un fichier ou généré aléatoirement
+	- Demander à l'usager: noeud de départ, noeud d'arrivée, algorithme à utiliser
+	- Affiche ensuite le parcours du noeud ainsi que la distance parcourue (en nombre de noeuds) et le temps de calcul.
+
+CRÉATION D'UNE MATRICE ALÉATOIRE
+	- Utiliser l'équation E1
+	- Toujours non-orienté
+	- L est toujours symétrique
+	- Demande à l'usager : N, minimum de lien sur un noeud(>=2), maximum de liens sur un noeud(<=(N-1)), poids minimum des liens et le poids maximum des liens.
 - utiliser -1 pour les paires non adjacentes
-Génération d'un fichier de valeurs aléatoire pour la matrice d'adjacence
-- Utiliser l'équation E1
+
 CRÉATION DE LA LISTE DE NOEUDS
 - A partir de la matrice d'adjacence
+
+CARTE ROUTIERE
+- Exploration en profondeur (algorithme glouton)
+- Algorithme de Dijkstra
+	- pseudo-code fournit à l'Annexe 2
+	- S = l'ensemble de noeux qui ont été sélectionnés
+	- C = l'ensemble des noeuds restants
+- Algorithme de Floyd-Warshall
+	- pseudo-code a l'annexe 2
+- Interface
+	- demande pour un fichier ou généré aléatoirement
+	- demande à l'usager le noeud de départ et d'Arrivé, algorithme a utiliser
+	- affiche le chemin, distance parcourue (les cout) et le temps de calcul
