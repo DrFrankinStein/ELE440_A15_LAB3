@@ -1,0 +1,11 @@
+TOUR DE LONDRE
+LABIRYNTHE
+- Exploration en profondeur
+- Exploration en largeur
+Création d'une matrice d'adjacence
+- Lue a partir d'un fichier
+- utiliser -1 pour les paires non adjacentes
+Génération d'un fichier de valeurs aléatoire pour la matrice d'adjacence
+- Utiliser l'équation E1
+CRÉATION DE LA LISTE DE NOEUDS
+- A partir de la matrice d'adjacence
