@@ -6,7 +6,7 @@ LABIRYNTHE
 	- Demander à l'usager: noeud de départ, noeud d'arrivée, algorithme à utiliser
 	- Affiche ensuite le parcours du noeud ainsi que la distance parcourue (en nombre de noeuds) et le temps de calcul.
 
-CRÉATION D'UNE MATRICE ALÉATOIRE
+CRÉATION D'UNE MATRICE ALÉATOIRE => FAIT À TESTER
 	- Utiliser l'équation E1
 	- Toujours non-orienté
 	- L est toujours symétrique
@@ -17,12 +17,12 @@ CRÉATION DE LA LISTE DE NOEUDS
 - A partir de la matrice d'adjacence
 
 CARTE ROUTIERE
-- Exploration en profondeur (algorithme glouton)
-- Algorithme de Dijkstra
+- Exploration en profondeur (algorithme glouton) => FAIT À TESTER
+- Algorithme de Dijkstra => À RETOUCHER
 	- pseudo-code fournit à l'Annexe 2
 	- S = l'ensemble de noeux qui ont été sélectionnés
 	- C = l'ensemble des noeuds restants
-- Algorithme de Floyd-Warshall
+- Algorithme de Floyd-Warshall => FAIT À TESTER
 	- pseudo-code a l'annexe 2
 - Interface
 	- demande pour un fichier ou généré aléatoirement
