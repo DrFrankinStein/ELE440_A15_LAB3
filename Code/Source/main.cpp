@@ -17,21 +17,23 @@ using namespace std;
 int main(int argc, char** argv) 
 {
     srand(0);
-    int N =5;
-    //int ** matrix = MatriceAdjacence::LoadFromFile("Londres.txt", N);
-    int ** matrix2 = CreerGraphe(N,2,2,1,1) ;
+    int N =20;
+    int ** matrix2 = MatriceAdjacence::LoadFromFile("Londres.txt", N);
+    //int ** matrix2 = CreerGraphe(N,2,2,1,1) ;
     int C[N];
-    int p =0;
     Node n[N];
     
     for(int j = 0; j<N; j++)
+    {
+        C[j] = -1;
         for(int i = j; i<N; i++)
         {
             if(i!=j)
                 Node::Connect(n[j], n[i], matrix2[j][i], matrix2[i][j]);
         }
+    }
     
-    ParcoursProfondeur(n,4,2,C,p);
+    ParcoursProfondeur(n,0,12,C,0);
     
     /*//Generer : non oriente et pondere
     for(int j = 0; j<N; j++)
@@ -71,6 +73,7 @@ int main(int argc, char** argv)
         }
     }
     cout << endl;
+    cout << endl;
     
     for(int i = 0; i<N; i++)
     {
@@ -88,7 +91,7 @@ int main(int argc, char** argv)
     return 0;
 }
 /*
-	// Déclaration des variables;
+	// Declaration des variables;
 	int N;
 	int minL;
 	int maxL;
