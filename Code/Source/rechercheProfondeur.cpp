@@ -1,12 +1,7 @@
-#include <cstdlib>
-#include <stdlib.h>
-#include <cstdio>
-#include "../Header/Node.hpp"
-
-using namespace std;
+#include "../Header/rechercheProfondeur.hpp"
 
 //Parcours_Profondeur(A[0..N-1],  Source,  Destination,  Chemin[0..N-1],  p)
-bool ParcoursProfondeur(Node *&A, int source, int destination, int *Chemin, int p)
+bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p)
 {
     //Si A[Source].visité
     if (A[source].GetVisited())
@@ -31,7 +26,7 @@ bool ParcoursProfondeur(Node *&A, int source, int destination, int *Chemin, int 
             //Trouvé == Vrai
             found = true;
             //Chemin[p+1] = A[v].nom
-            Chemin[p+1] = A[v].GetID();
+            Chemin[p] = A[v].GetID();
         }
         //Sinon
         else

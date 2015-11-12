@@ -8,16 +8,30 @@
 #include <cstdlib>
 #include "../Header/Node.hpp"
 #include "../Header/MatriceAdjacence.hpp"
+#include "../Header/CreerMatriceAleatoire.hpp"
+#include "../Header/rechercheProfondeur.hpp"
+
 
 using namespace std;
 
 int main(int argc, char** argv) 
 {
     srand(0);
-    int N ;
-    int ** matrix = MatriceAdjacence::LoadFromFile("Londres.txt", N);
- 
-    //Node n[N];
+    int N =5;
+    //int ** matrix = MatriceAdjacence::LoadFromFile("Londres.txt", N);
+    int ** matrix2 = CreerGraphe(N,2,2,1,1) ;
+    int C[N];
+    int p =0;
+    Node n[N];
+    
+    for(int j = 0; j<N; j++)
+        for(int i = j; i<N; i++)
+        {
+            if(i!=j)
+                Node::Connect(n[j], n[i], matrix2[j][i], matrix2[i][j]);
+        }
+    
+    ParcoursProfondeur(n,4,2,C,p);
     
     /*//Generer : non oriente et pondere
     for(int j = 0; j<N; j++)
@@ -43,26 +57,34 @@ int main(int argc, char** argv)
                 Node::Connect(n[j], n[i], rand()%2?1:-1);
         }*/
     
-    /*for(int i = 0; i<N; i++)
+    for(int i = 0; i<N; i++)
     {
         n[i].PrintConnection();
-    }*/
-    /*
+    }
+    
     for(int i = 0; i<N; i++)
     {
         cout << endl;
         for(int j = 0; j<N; j++)
         {
-            cout << (matrix[i][j]>-1? " ":"") << matrix[i][j] << " ";
+            cout << (matrix2[i][j]>-1? " ":"") << matrix2[i][j] << " ";
         }
     }
-    cout << endl;*/
+    cout << endl;
+    
+    for(int i = 0; i<N; i++)
+    {
+        cout << (C[i]>-1? " ":"") << C[i] << " ";
+    }
+    cout << endl;
+    
     
     for(int i =0; i<N;i++)
     {
-        delete matrix[i];
+        delete matrix2[i];
+        //delete
     }
-    delete matrix;
+    delete matrix2;
     return 0;
 }
 /*

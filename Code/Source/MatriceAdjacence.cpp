@@ -43,7 +43,7 @@ int ** MatriceAdjacence::LoadFromFile(const char * fileName, int &N)
                                 N = tmp;
                                 matrixArray = new int*[N];
                                 for(int i = 0; i < N; ++i)
-                                matrixArray[i] = new int[N];
+                                    matrixArray[i] = new int[N];
                                 break;
                    
                             default :
