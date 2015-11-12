@@ -1,9 +1,9 @@
 //Floyd-Warshall(L[0..N-1,0..N-1],  Source,  Destination)  :  Chemin[0..N-1,0..N-1]
-void FlotdWarshall(int L[][], int source, int destination, int N)
+void FlotdWarshall(int L[][10], int source, int destination, int N)
 {
 	//D[0..N-1,0..N-1], Chemin[0..N-1,0..N-1]
-	int D[][];
-	int chemin[][];
+	int D[N][N];
+	int chemin[N][N];
 	int i;
 	int j;
 	int k;

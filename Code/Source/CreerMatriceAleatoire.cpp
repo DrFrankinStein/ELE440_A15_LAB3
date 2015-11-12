@@ -1,12 +1,12 @@
 #include <cstdlib>
 #include <stdlib.h>
-#include <stdio>
+#include <stdio.h>
 
 using namespace std;
 
 //CreerGraphe (N, minL, maxL, minP, maxP) : L[0..N-1,0..N-1]
 
-int CreerGraphe(int N, int minL, int maxL, int minP, int maxP)
+void CreerGraphe(int N, int minL, int maxL, int minP, int maxP)
 {
 	// Déclarer les variables
 
@@ -85,5 +85,4 @@ int CreerGraphe(int N, int minL, int maxL, int minP, int maxP)
 			}
 		}
 	}
-	return 0;
 }
