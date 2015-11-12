@@ -9,7 +9,7 @@ using namespace std;
 void start()
 {
 
-	// Déclaration des variables;
+	// Dï¿½claration des variables;
 	int N;
 	int minL;
 	int maxL;
@@ -23,12 +23,12 @@ void start()
 	{
 		printf("Voulez-vous :\n");
 		printf("(1) Generer aleatoirement un graphe\n");
-		printf("(2) Creer un graphe à partir d'un fichier\n");
+		printf("(2) Creer un graphe a partir d'un fichier\n");
 		scanf("%d\n",&option);
 	}
-	while(option != 1 && option != 2)
+	while(option != 1 && option != 2);
 
-	if (option == 1)
+	if(option == 1)
 	{
 		// Generer aleatoirement un graphe
 		printf("Combien de noeux : \n");
@@ -62,7 +62,7 @@ void start()
 	}
 	else if(option == 2)
 	{
-		// Creer un graphe à partir d'un fichier
+		// Creer un graphe a partir d'un fichier
 
 		// A COMPLETER
 	}
@@ -73,14 +73,14 @@ void start()
 
 	do
 	{
-		printf("Quel est le numéro du premier noeud (0 <= pNoeud < %d) : \n", N);
+		printf("Quel est le numero du premier noeud (0 <= pNoeud < %d) : \n", N);
 		scanf("%d\n",&pNoeud);
 	}
 	while(pNoeud < N && pNoeud >= 0);
 
 	do
 	{
-		printf("Quel est le numéro du dernier noeud (0 <= dNoeud < %d) : \n", N);
+		printf("Quel est le numero du dernier noeud (0 <= dNoeud < %d) : \n", N);
 		scanf("%d\n",&dNoeud);
 	}
 	while(dNoeud < N && dNoeud >= 0);

@@ -148,3 +148,23 @@ void Node::PrintConnection(void)
     }
     cout << endl;
 }
+
+bool Node::GetVisited(void)
+{
+    return isVisited;
+}
+
+void Node::SetVisited(bool state)
+{
+    isVisited=state;
+}
+
+int Node::GetNeighbor(int index)
+{
+    return linkedNeighbors[index];
+}
+
+int Node::GetWeight(int index)
+{
+    return linkedWeights[index];
+}

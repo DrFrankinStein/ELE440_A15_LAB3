@@ -30,6 +30,10 @@ public :
     
     int GetID(void);
     int GetNbNeighbors(void);
+    bool GetVisited(void);
+    void SetVisited(bool state);
+    int GetNeighbor(int index);
+    int GetWeight(int index);
     
     void AddConnection(Node &n, int weight);
     
@@ -42,7 +46,7 @@ public :
 private:
     static int nbNodes; //Nombre de noeuds crees
     int ID; //Identifiant du noeud
-    //bool isVisited = false; 
+    bool isVisited = false; 
     int nbNeighbors = 0; //Nombre de voisins du noeud
     
     vector<int> linkedNeighbors; // Liste des voisins (index)
