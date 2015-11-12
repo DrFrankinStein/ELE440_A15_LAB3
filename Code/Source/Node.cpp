@@ -140,8 +140,11 @@ void Node::PrintConnection(void)
     
     for (int i = 0; i < nbNeighbors ; i++)
     {
-        cout << "|" << endl << "|---" << linkedWeights[i];
-        cout << "-->(" << linkedNeighbors[i] << ")" << endl;     
+        if(linkedNeighbors[i] != ID)
+        {
+            cout << "|" << endl << "|---" << linkedWeights[i];
+            cout << "-->(" << linkedNeighbors[i] << ")" << endl;     
+        }
     }
     cout << endl;
 }
