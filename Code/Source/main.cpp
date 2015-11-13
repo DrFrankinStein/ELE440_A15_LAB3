@@ -10,6 +10,7 @@
 #include "../Header/MatriceAdjacence.hpp"
 #include "../Header/CreerMatriceAleatoire.hpp"
 #include "../Header/rechercheProfondeur.hpp"
+#include "../Header/Dijkstra.hpp"
 
 
 using namespace std;
@@ -17,10 +18,12 @@ using namespace std;
 int main(int argc, char** argv) 
 {
     srand(0);
-    int N =20;
-    int ** matrix2 = MatriceAdjacence::LoadFromFile("Londres.txt", N);
-    //int ** matrix2 = CreerGraphe(N,2,2,1,1) ;
-    int C[N];
+    int sum = 0;
+    int N =10;
+    int ** matrix2 = MatriceAdjacence::LoadFromFile("Labyrinthe.txt", N);
+    //int ** matrix2 = CreerGraphe(N,2,2,1,10) ;
+    int C[N], D[N];
+    bool V[N];
     Node n[N];
     
     for(int j = 0; j<N; j++)
@@ -32,8 +35,29 @@ int main(int argc, char** argv)
                 Node::Connect(n[j], n[i], matrix2[j][i], matrix2[i][j]);
         }
     }
-    
-    ParcoursProfondeur(n,0,12,C,0);
+    /*for(int j =0 ; j < N; j++)
+    {
+        cout << j << " : ";
+        for(int i = 0; i<n[j].GetNbNeighbors(); i++)
+        {
+            cout << n[j].GetNeighbor(i) << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    for(int j =0 ; j < N; j++)
+    {
+        n[j].SortNeighborsWeight();
+        cout << j << " : ";
+        for(int i = 0; i<n[j].GetNbNeighbors(); i++)
+        {
+            cout << n[j].GetNeighbor(i) << " ";
+        }
+        cout << endl;
+    }*/
+    //ParcoursProfondeur(n,0,9,C,0);
+    Dijkstra(n, 0, 219, N, C, D, V);
+    //ParcoursProfondeurGlouton(n,0,219,C,0);
     
     /*//Generer : non oriente et pondere
     for(int j = 0; j<N; j++)
@@ -59,28 +83,50 @@ int main(int argc, char** argv)
                 Node::Connect(n[j], n[i], rand()%2?1:-1);
         }*/
     
-    for(int i = 0; i<N; i++)
+    /*for(int i = 0; i<N; i++)
     {
         n[i].PrintConnection();
-    }
+    }*/
     
-    for(int i = 0; i<N; i++)
+    /*for(int i = 0; i<N; i++)
     {
         cout << endl;
         for(int j = 0; j<N; j++)
         {
             cout << (matrix2[i][j]>-1? " ":"") << matrix2[i][j] << " ";
         }
-    }
+    }*/
     cout << endl;
+    cout << endl;
+    int id, weight=-1;
+    for(int i = 0; i<N; i++)
+    {
+        if(C[i+1]>-1)
+        {
+            if(i<(N-1))
+            {
+                id = n[C[i]].SearchID(C[i+1]);
+                if(id>-1)
+                {
+                    weight = n[C[i]].GetWeight(id);
+                    sum+=weight;
+                }
+            }
+            cout << "(" <<  C[i] << ")-" << weight << "-";
+        }
+        else
+        {
+            cout << "(" << C[i]<< ") = " << sum;
+            i=N;
+        }
+            
+    }
     cout << endl;
     
     for(int i = 0; i<N; i++)
     {
-        cout << (C[i]>-1? " ":"") << C[i] << " ";
+        cout <<  D[i] << " ";
     }
-    cout << endl;
-    
     
     for(int i =0; i<N;i++)
     {

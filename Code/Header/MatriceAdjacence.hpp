@@ -21,7 +21,8 @@ class MatriceAdjacence
 public:
     static int ** LoadFromFile(string fileName , int &N);
     static int ** LoadFromFile(const char * fileName, int &N);
-    static int ** Generate(int N, int minL, int maxL, int minW, int maxW);
+    //static int ** Generate(int N, int minL, int maxL, int minW, int maxW);
+    static int ** CreerGraphe(int N, int minL, int maxL, int minW, int maxW);
 };
 
 #endif	/* MATRICEADJACENCE_HPP */

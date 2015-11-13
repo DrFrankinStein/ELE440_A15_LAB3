@@ -29,11 +29,13 @@ public :
     ~Node(void);
     
     int GetID(void);
+    int SearchID(int id);
     int GetNbNeighbors(void);
     bool GetVisited(void);
     void SetVisited(bool state);
     int GetNeighbor(int index);
     int GetWeight(int index);
+    void SortNeighborsWeight(void);
     
     void AddConnection(Node &n, int weight);
     
@@ -43,6 +45,7 @@ public :
     static void Connect(Node &n1, Node &n2, int weight);
     static void Connect(Node &n1, Node &n2, int weightN1ToN2, int weightN2ToN1);
     
+    
 private:
     static int nbNodes; //Nombre de noeuds crees
     int ID; //Identifiant du noeud
@@ -51,8 +54,6 @@ private:
     
     vector<int> linkedNeighbors; // Liste des voisins (index)
     vector<int> linkedWeights; // Liste des poids des connections avec les voisins
-    
-    int SearchID(int id);
 };
 
 #endif //_NODE_HPP

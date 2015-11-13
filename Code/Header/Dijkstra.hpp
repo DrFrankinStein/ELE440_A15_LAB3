@@ -8,7 +8,11 @@
 #ifndef HEADER_DIJKSTRA_HPP_
 #define HEADER_DIJKSTRA_HPP_
 
-void Dijkstra(int L[][10], int source, int Destination,  int N);
+#include "../Header/Node.hpp"
+
+void Dijkstra(int **L, int source, int Destination,  int N);
+void Dijkstra(Node *A, int source, int destination,  int N, 
+                int *Chemin, int *D, bool *Visited);
 
 
 

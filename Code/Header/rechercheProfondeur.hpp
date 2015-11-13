@@ -14,6 +14,7 @@
 #include "../Header/Node.hpp"
 
 bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p);
+bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin, int p);
 
 #endif	/* RECHERCHEPROFONDEUR_HPP */
 

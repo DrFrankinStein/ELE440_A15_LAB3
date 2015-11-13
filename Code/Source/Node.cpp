@@ -168,3 +168,22 @@ int Node::GetWeight(int index)
 {
     return linkedWeights[index];
 }
+
+void Node::SortNeighborsWeight(void)
+{
+    int tmp1, tmp2, j;
+    for(int i=1; i<nbNeighbors; i++)
+    {
+        tmp1 = linkedWeights[i];
+        tmp2 = linkedNeighbors[i];
+        j=i;
+        while(j>0&&linkedWeights[j-1]>tmp1)
+        {
+            linkedWeights[j] = linkedWeights[j-1];
+            linkedNeighbors[j] = linkedNeighbors[j-1];
+            j--;
+        }
+        linkedWeights[j] = tmp1;
+        linkedNeighbors[j] = tmp2;
+    }
+}

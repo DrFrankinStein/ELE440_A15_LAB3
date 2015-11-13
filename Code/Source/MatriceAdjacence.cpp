@@ -74,6 +74,64 @@ int ** MatriceAdjacence::LoadFromFile(const char * fileName, int &N)
     return matrixArray;
 } 
 
+int** MatriceAdjacence::CreerGraphe(int N, int minL, int maxL, int minW, int maxW)
+{
+    int K, P, v, a;
+
+    int **matrix = new int*[N];
+    for(int i = 0; i < N; i++)
+        matrix[i]= new int [N];
+    int nbLink[N];
+    int tmpLink[N];
+
+    for (int n = 0; n < N; n++)
+    {
+        for (int m = 0; m < N; m++)
+        {
+            if (n == m)
+            {
+                matrix[n][m] = 0;
+            }
+            else
+            {
+                matrix[n][m] = -1;
+            }
+        }
+        nbLink[n] = minL + rand()%(maxL-minL+1);
+    }
+    
+    for (int k = 1; k <= minL; k++)
+    {
+        for(int n = 0; n < N; n++)
+        {
+            if(nbLink[n] > 0)
+            {
+                K = 0;
+                for(int i = 0; i<N; i++)
+                {
+                    if((matrix[n][i] < 0) && (nbLink[i] > 0))
+                    {
+                        tmpLink[K] = i;
+                        K = K + 1;
+                    }
+                }
+                
+                if(K > 0)
+                {
+                    v = rand()%K;
+                    a = tmpLink[v];
+                    P = minW + rand()%(maxW-minW+1);
+                    matrix[n][a] = P;
+                    matrix[a][n] = P;
+                    nbLink[n] = nbLink[n] - 1;
+                    nbLink[a] = nbLink[a] - 1;
+                }
+            }
+        }
+    }
+    return matrix;
+}
+
 /*int ** Generate(int N, int minL, int maxL, int minW, int maxW)
 {
     bool linkExist = true;
