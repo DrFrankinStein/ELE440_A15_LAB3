@@ -1,7 +1,7 @@
 #include "../Header/Largeur.hpp"
 
-bool ParcoursLargeur(Node *A, int *sources, int destination, int *Chemin, int p, int n)
-{
+bool ParcoursLargeur(Node *A,int N, int *sources, int destination, int *Chemin, int p, int n)
+{  
     int i;
     
     for(i = 0; i < n; i++)
@@ -11,7 +11,7 @@ bool ParcoursLargeur(Node *A, int *sources, int destination, int *Chemin, int p,
     bool found = false;
     int k = 0;
     int v;
-    int list[100];
+    int list[N];
     int sourceIndex;
     
     i = 0;
@@ -49,7 +49,7 @@ bool ParcoursLargeur(Node *A, int *sources, int destination, int *Chemin, int p,
     }
     if(!found)
     {
-        found = ParcoursLargeur(A, list, destination, Chemin, p+1, k);
+        found = ParcoursLargeur(A, N, list, destination, Chemin, p+1, k);
     }
     
     i = 0;

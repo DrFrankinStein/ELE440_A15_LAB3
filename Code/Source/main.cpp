@@ -12,6 +12,7 @@
 #include "../Header/rechercheProfondeur.hpp"
 #include "../Header/Dijkstra.hpp"
 #include "../Header/Floyd.hpp"
+#include "../Header/Largeur.hpp"
 
 using namespace std;
 
@@ -22,7 +23,7 @@ int main(int argc, char** argv)
     int N =10;
     //int ** matrix2 = MatriceAdjacence::LoadFromFile("Labyrinthe.txt", N);
     int ** matrix2 = CreerGraphe(N,2,2,1,10) ;
-    int C[N], D[N];
+    int C[N], D[N], S[N];
     int **C2;
     int **D2;
     int source = 0;
@@ -51,8 +52,8 @@ int main(int argc, char** argv)
 #define PARCOURS_PROFONDEUR 0 
 #define PARCOURS_GLOUTON 0
 #define PARCOURS_DIJKSTRA 0  
-#define PARCOURS_LARGEUR 0 
-#define PARCOURS_FLOYD 1   
+#define PARCOURS_LARGEUR 1 
+#define PARCOURS_FLOYD 0   
 
 #if PARCOURS_PROFONDEUR 
     ParcoursProfondeur(n,source,destination,C,0);
@@ -67,7 +68,8 @@ int main(int argc, char** argv)
     FloydWarshall(n, source, destination, N, C2, D2, C);
 #endif
 #if PARCOURS_LARGEUR
-    
+    S[0] = source;
+    ParcoursLargeur(n, N, S, destination, C, 0, 1);
 #endif
     
 
@@ -105,7 +107,7 @@ int main(int argc, char** argv)
     
 #endif        
     
-#if PARCOURS_DIJKSTRA || PARCOURS_GLOUTON || PARCOURS_PROFONDEUR || PARCOURS_FLOYD   
+#if PARCOURS_DIJKSTRA || PARCOURS_GLOUTON || PARCOURS_PROFONDEUR || PARCOURS_FLOYD || PARCOURS_LARGEUR   
     cout << endl;
     cout << endl;
     int id, weight=-1;

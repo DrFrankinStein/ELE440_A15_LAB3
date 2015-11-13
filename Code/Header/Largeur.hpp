@@ -19,7 +19,7 @@
 #include <cstdio>
 #include "../Header/Node.hpp"
 
-bool ParcoursLargeur(Node *A, int *sources, int destination, int *Chemin, int p, int n);
+bool ParcoursLargeur(Node *A,int N, int *sources, int destination, int *Chemin, int p, int n);
 
 #endif /* LARGEUR_H */
 
