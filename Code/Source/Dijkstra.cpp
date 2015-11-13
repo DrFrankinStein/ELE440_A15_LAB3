@@ -28,58 +28,6 @@ void RetrouverCheminDijkstra(int* Chemin, int N, int end)
     }
 }
 
-//Dijkstra(L[0..N-1,0..N-1],  Source,  Destination)  :  Chemin[0..N-1]  D[0..N-1], Visit�[0..N-1], Chemin[0..N-1]
-void Dijkstra(int ** L, int source, int destination,  int N, 
-                int *Chemin, int *D, bool *Visited  )
-{
-/*    //int chemin[N];
-    //int D[N];
-    //bool visited[N];
-    //int n;
-    int min;
-    int visitedNumber;
-    int closest;
-    //int nextSummit;
-
-    for (int n = 0; n < N; n++)
-    {
-        D[n] = L[source][n];
-        Chemin[n] = source;
-        Visited[n] = false;
-    }
-    Visited[source] = true;
-    visitedNumber = 1;
-    while (visitedNumber < N)
-    {
-        //plusProche = sommet non visited avec le plus petit D
-        min = INT_MAX;
-        for (int m = 0; m < N; m++)
-        {
-            if (Visited[m] == false && D[m] <= min && D[m]!=-1)
-            {
-                min = D[m];
-                closest = m;
-            }
-        }
-        
-	Visited[closest] = true;
-	visitedNumber = visitedNumber + 1;
-        for(int i = 0; ;);
-    }
-    //Pour tous les prochainSommet dans la liste des voisins de plusProche
-    //for(;;);
-	//{
-		//Si D[prochainSommet] > D[plusProche] + L[plusProche, prochainSommet]
-//		if (D[nextSummit] > D[closest] + L[closest][nextSummit])
-//		{
-//			//D[prochainSommet]  =  D[plusProche]  +  L[plusProche, prochainSommet]
-//			D[nextSummit] = D[closest] + L[closest][nextSummit];
-//		}
-	//}
-	//Chemin[prochainSommet] = plusProche
-//	chemin[nextSummit] = closest;*/
-}
-
 void Dijkstra(Node *A, int source, int destination,  int N, 
                 int *Chemin, int *D, bool *Visited)
 {

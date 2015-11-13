@@ -50,9 +50,9 @@ int main(int argc, char** argv)
  
 #define PARCOURS_PROFONDEUR 0 
 #define PARCOURS_GLOUTON 0
-#define PARCOURS_DIJKSTRA 1  
+#define PARCOURS_DIJKSTRA 0  
 #define PARCOURS_LARGEUR 0 
-#define PARCOURS_FLOYD 0   
+#define PARCOURS_FLOYD 1   
 
 #if PARCOURS_PROFONDEUR 
     ParcoursProfondeur(n,source,destination,C,0);
@@ -133,7 +133,7 @@ int main(int argc, char** argv)
     }
     cout << endl;
 #endif
-#if (PARCOURS_DIJKSTRA || PARCOURS_FLOYD) && 0
+#if (PARCOURS_DIJKSTRA || PARCOURS_FLOYD)
     for(int i = 0; i<N; i++)
     {
         cout <<  D[i] << " ";

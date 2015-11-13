@@ -10,7 +10,6 @@
 
 #include "../Header/Node.hpp"
 
-void Dijkstra(int **L, int source, int Destination,  int N);
 void Dijkstra(Node *A, int source, int destination,  int N, 
                 int *Chemin, int *D, bool *Visited);
 
