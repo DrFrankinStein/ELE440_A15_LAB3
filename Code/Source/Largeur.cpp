@@ -1,6 +1,6 @@
 #include "../Header/Largeur.hpp"
 
-bool ParcoursLargeur(Node *A,int N, int *sources, int destination, int *Chemin, int p, int n)
+bool ParcoursLargeur(Node *A,int N, int *sources, int destination, int *Chemin, int p, int n, int &barometre)
 {  
     int i;
     
@@ -22,6 +22,7 @@ bool ParcoursLargeur(Node *A,int N, int *sources, int destination, int *Chemin, 
         while (j < A[sources[i]].GetNbNeighbors() && !found)
         {
             v = A[sources[i]].GetNeighbor(j);
+            barometre++;
             if(A[v].GetID() == destination)
             {
                 found = true;
@@ -49,7 +50,7 @@ bool ParcoursLargeur(Node *A,int N, int *sources, int destination, int *Chemin, 
     }
     if(!found)
     {
-        found = ParcoursLargeur(A, N, list, destination, Chemin, p+1, k);
+        found = ParcoursLargeur(A, N, list, destination, Chemin, p+1, k, barometre);
     }
     
     i = 0;

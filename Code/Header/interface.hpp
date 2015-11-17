@@ -8,7 +8,7 @@
 #ifndef HEADER_INTERFACE_HPP_
 #define HEADER_INTERFACE_HPP_
 
-void start();
+void start(void);
 
 
 

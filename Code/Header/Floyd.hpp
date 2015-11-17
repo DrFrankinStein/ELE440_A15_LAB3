@@ -11,7 +11,7 @@
 #include <climits>
 #include "../Header/Node.hpp"
 
-void FloydWarshall(Node *A, int source, int destination, int N, int **Chemin, int **D, int *C);
+int FloydWarshall(Node *A, int source, int destination, int N, int **Chemin, int **D, int *C);
 
 #endif	/* FLOYD_HPP */
 

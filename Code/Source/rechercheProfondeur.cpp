@@ -1,6 +1,6 @@
 #include "../Header/rechercheProfondeur.hpp"
 
-bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p)
+bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p, int &barometre)
 {
     if (A[source].GetVisited())
     {
@@ -14,6 +14,7 @@ bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p
     while ((k < A[source].GetNbNeighbors()) && (!found))
     {
         v = A[source].GetNeighbor(k);
+        barometre++;
         if(A[v].GetID() == destination)
         {
             found = true;
@@ -21,7 +22,7 @@ bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p
         }
         else
         {
-            found = ParcoursProfondeur(A, v, destination, Chemin, p+1);
+            found = ParcoursProfondeur(A, v, destination, Chemin, p+1, barometre);
         }
         if (!found)
         {
@@ -38,7 +39,7 @@ bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p
 
 #include "../Header/rechercheProfondeur.hpp"
 
-bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin, int p)
+bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin, int p, int &barometre)
 {
     if (A[source].GetVisited())
     {
@@ -52,6 +53,7 @@ bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin
     while ((k < A[source].GetNbNeighbors()) && (!found))
     {
         v = A[source].GetNeighbor(k);
+        barometre++;
         if(A[v].GetID() == destination)
         {
             found = true;
@@ -59,7 +61,7 @@ bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin
         }
         else
         {
-            found = ParcoursProfondeur(A, v, destination, Chemin, p+1);
+            found = ParcoursProfondeur(A, v, destination, Chemin, p+1, barometre);
         }
         if (!found)
         {

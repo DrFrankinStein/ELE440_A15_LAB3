@@ -13,8 +13,8 @@
 #include <cstdio>
 #include "../Header/Node.hpp"
 
-bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p);
-bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin, int p);
+bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p, int &barometre);
+bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin, int p, int &barometre);
 
 #endif	/* RECHERCHEPROFONDEUR_HPP */
 

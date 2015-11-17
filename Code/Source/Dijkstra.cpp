@@ -1,7 +1,7 @@
 #include "../Header/Dijkstra.hpp"
 #include "climits"
 
-void RetrouverCheminDijkstra(int* Chemin, int N, int end)
+void RetrouverCheminDijkstra(int* Chemin, int N, int end, int &barometre)
 {
     int tmp[N], previous, count =0;
     
@@ -20,7 +20,10 @@ void RetrouverCheminDijkstra(int* Chemin, int N, int end)
     }
     
     for(int i =0; i<N ; i++)
+    {
         Chemin[i] = -1;
+        barometre++;
+    }
         
     for(int i =0; i<count; i++)
     {
@@ -28,9 +31,10 @@ void RetrouverCheminDijkstra(int* Chemin, int N, int end)
     }
 }
 
-void Dijkstra(Node *A, int source, int destination,  int N, 
+int Dijkstra(Node *A, int source, int destination,  int N, 
                 int *Chemin, int *D, bool *Visited)
 {
+    int barometre = 0;
     int min;
     int visitedNumber;
     int closest;
@@ -72,6 +76,7 @@ void Dijkstra(Node *A, int source, int destination,  int N,
         for(int i = 0; i<A[closest].GetNbNeighbors();i++)
         {
             nextPath = A[closest].GetNeighbor(i);
+            barometre++;
             if((D[nextPath]>(D[closest]+A[closest].GetWeight(i)))||(D[nextPath]==-1))
             {
                 D[nextPath]=(D[closest]+A[closest].GetWeight(i));
@@ -81,6 +86,7 @@ void Dijkstra(Node *A, int source, int destination,  int N,
         }
         
     }
-    RetrouverCheminDijkstra(Chemin, N, destination);
+    RetrouverCheminDijkstra(Chemin, N, destination, barometre);
+    return barometre;
 }
 

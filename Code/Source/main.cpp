@@ -13,12 +13,13 @@
 #include "../Header/Dijkstra.hpp"
 #include "../Header/Floyd.hpp"
 #include "../Header/Largeur.hpp"
+#include "../Header/interface.hpp"
 
 using namespace std;
 
 int main(int argc, char** argv) 
 {
-    srand(0);
+    /*srand(0);
     int sum = 0;
     int N =10;
     //int ** matrix2 = MatriceAdjacence::LoadFromFile("Labyrinthe.txt", N);
@@ -73,10 +74,10 @@ int main(int argc, char** argv)
 #endif
     
 
-    /*for(int i = 0; i<N; i++)
-    {
-        n[i].PrintConnection();
-    }*/
+    //for(int i = 0; i<N; i++)
+   // {
+   //     n[i].PrintConnection();
+   // }
 
 #if PARCOURS_FLOYD
     
@@ -152,11 +153,15 @@ int main(int argc, char** argv)
     delete matrix2;
     delete C2;
     delete D2;
+    return 0;*/
+    
+    
+    start();
     return 0;
 }
 
 
-    /*//Generer : non oriente et pondere
+    /*Generer : non oriente et pondere
     for(int j = 0; j<N; j++)
         for(int i = j; i<N; i++)
         {

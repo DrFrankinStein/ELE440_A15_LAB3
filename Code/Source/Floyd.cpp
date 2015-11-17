@@ -1,6 +1,6 @@
 #include "../Header/Floyd.hpp"
 
-void RetrouverCheminFloyd(int** Chemin, int N,int source, int end, int *C)
+void RetrouverCheminFloyd(int** Chemin, int N,int source, int end, int *C, int &barometre)
 {
     int tmp[N], previous, count=0;
     
@@ -19,7 +19,10 @@ void RetrouverCheminFloyd(int** Chemin, int N,int source, int end, int *C)
     }
     
     for(int i =0; i<N ; i++)
+    {
         C[i] = -1;
+        barometre++;
+    }
         
     for(int i =0; i<count; i++)
     {
@@ -28,10 +31,10 @@ void RetrouverCheminFloyd(int** Chemin, int N,int source, int end, int *C)
 }
 
 //Floyd-Warshall(L[0..N-1,0..N-1],  Source,  Destination)  :  Chemin[0..N-1,0..N-1]
-void FloydWarshall(Node *A, int source, int destination, int N, int **Chemin, int **D, int * C)
+int FloydWarshall(Node *A, int source, int destination, int N, int **Chemin, int **D, int * C)
 {
     //D[0..N-1,0..N-1], Chemin[0..N-1,0..N-1]
-
+    int barometre=0;
     int neighbor;
     
     for(int i = 0; i < N; i++)
@@ -59,6 +62,7 @@ void FloydWarshall(Node *A, int source, int destination, int N, int **Chemin, in
         {
             for(int j = 0; j < N; j++)
             {
+                barometre++;
                 if(D[i][j] > D[i][k] + D[k][j])
                 {
                     D[i][j] = D[i][k] + D[k][j];
@@ -76,5 +80,6 @@ void FloydWarshall(Node *A, int source, int destination, int N, int **Chemin, in
         }
     }
     
-    RetrouverCheminFloyd(Chemin,N, source, destination, C);
+    RetrouverCheminFloyd(Chemin,N, source, destination, C, barometre);
+    return barometre;
 }
