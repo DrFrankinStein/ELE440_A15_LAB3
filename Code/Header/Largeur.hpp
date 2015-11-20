@@ -1,18 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
- * File:   Largeur.h
- * Author: PPoucH
- *
- * Created on 12 novembre 2015, 18:28
+ * File:   Largeur.hpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
  */
 
 #ifndef LARGEUR_H
 #define LARGEUR_H
+
+// Include
 
 #include <cstdlib>
 #include <stdlib.h>

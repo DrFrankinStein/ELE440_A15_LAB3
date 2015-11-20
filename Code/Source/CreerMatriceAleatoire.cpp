@@ -1,3 +1,11 @@
+/* 
+ * File:   CreerMatriceAleatoire.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
+ */
+
+// Include
+
 #include "../Header/CreerMatriceAleatoire.hpp"
 
 int** CreerGraphe(int N, int minL, int maxL, int minP, int maxP)

@@ -1,3 +1,11 @@
+/* 
+ * File:   MatriceAdjacence.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
+ */
+
+// Include
+
 #include "../Header/MatriceAdjacence.hpp"
 
 int ** MatriceAdjacence::LoadFromFile(string fileName , int &N)

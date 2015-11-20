@@ -1,5 +1,19 @@
+/* 
+ * File:   rechercheProfondeur.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
+ */
+
+// Include
+
 #include "../Header/rechercheProfondeur.hpp"
 
+/*
+ * Nom : ParcoursProfondeur
+ * Parametres d'entrés : Node *A, int source, int destination, int *Chemin, int p, int &barometre
+ * Parametres de sortie : bool
+ * Description : Parcours un arbre en profondeur. Retourne faux si la destination n'existe pas.
+ */
 bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p, int &barometre)
 {
     if (A[source].GetVisited())
@@ -38,6 +52,13 @@ bool ParcoursProfondeur(Node *A, int source, int destination, int *Chemin, int p
 }
 
 #include "../Header/rechercheProfondeur.hpp"
+
+/*
+ * Nom : ParcoursProfondeurGlouton
+ * Parametres d'entrés : Node *A, int source, int destination, int *Chemin, int p, int &barometre
+ * Parametres de sortie : bool
+ * Description : Parcours un arbre en profondeur. Retourne faux si la destination n'existe pas. Les données sont triés.
+ */
 
 bool ParcoursProfondeurGlouton(Node *A, int source, int destination, int *Chemin, int p, int &barometre)
 {

@@ -1,3 +1,11 @@
+/* 
+ * File:   interface.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
+ */
+
+// Include
+
 #include <cstdlib>
 #include <stdlib.h>
 #include <stdio.h>

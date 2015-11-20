@@ -1,8 +1,7 @@
-/*
- * interface.hpp
- *
- *  Created on: 2015-11-11
- *      Author: PPoucH
+/* 
+ * File:   interface.hpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
  */
 
 #ifndef HEADER_INTERFACE_HPP_

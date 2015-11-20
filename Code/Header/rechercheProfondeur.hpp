@@ -1,12 +1,13 @@
 /* 
  * File:   rechercheProfondeur.hpp
- * Author: Julien
- *
- * Created on 12 novembre 2015, 15:39
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
  */
 
 #ifndef RECHERCHEPROFONDEUR_HPP
 #define	RECHERCHEPROFONDEUR_HPP
+
+// Include
 
 #include <cstdlib>
 #include <stdlib.h>

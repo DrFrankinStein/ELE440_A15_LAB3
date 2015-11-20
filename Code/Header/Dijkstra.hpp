@@ -1,12 +1,13 @@
-/*
- * Dijkstra.hpp
- *
- *  Created on: 2015-11-11
- *      Author: PPoucH
+/* 
+ * File:   Dijkstra.hpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
  */
 
 #ifndef HEADER_DIJKSTRA_HPP_
 #define HEADER_DIJKSTRA_HPP_
+
+// Include
 
 #include "../Header/Node.hpp"
 

@@ -1,4 +1,19 @@
+/* 
+ * File:   Largeur.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
+ */
+
+// Include
+s
 #include "../Header/Largeur.hpp"
+
+/*
+ * Nom : ParcoursLargeur
+ * Parametres d'entrés : Node *A,int N, int *sources, int destination, int *Chemin, int p, int n, int &barometre
+ * Parametres de sortie : bool
+ * Description : Parcours un arbre en largeur. Retourne faux si la destination n'existe pas.
+ */
 
 bool ParcoursLargeur(Node *A,int N, int *sources, int destination, int *Chemin, int p, int n, int &barometre)
 {  

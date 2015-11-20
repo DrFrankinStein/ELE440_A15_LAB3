@@ -1,5 +1,20 @@
+/* 
+ * File:   Dijkstra.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
+ */
+
+// Include
+
 #include "../Header/Dijkstra.hpp"
 #include "climits"
+
+/*
+ * Nom : RetrouverCheminDijkstra
+ * Parametres d'entrés : int* Chemin, int N, int end, int &barometre
+ * Parametres de sortie : void
+ * Description : retrouver la source apres avoir toruver la destination pour retrouver le chemin.
+ */
 
 void RetrouverCheminDijkstra(int* Chemin, int N, int end, int &barometre)
 {
@@ -30,6 +45,13 @@ void RetrouverCheminDijkstra(int* Chemin, int N, int end, int &barometre)
         Chemin[i] = tmp[count-i-1];
     }
 }
+
+/*
+ * Nom : RetrouverCheminDijkstra
+ * Parametres d'entrés : int* Chemin, int N, int end, int &barometre
+ * Parametres de sortie : void
+ * Description : Utilise l'algorithme de Dijkstra pour calculer le chemin le plus court entre la source et la destination.
+ */
 
 int Dijkstra(Node *A, int source, int destination,  int N, 
                 int *Chemin, int *D, bool *Visited)

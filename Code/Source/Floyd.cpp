@@ -1,8 +1,36 @@
+/* 
+ * File:   Floyd.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
+ */
+
+// Include
+
 #include "../Header/Floyd.hpp"
+#include <cstdlib>
+#include <stdlib.h>
+#include <stdio.h>
+#include <climits>
+
+/*
+ * Nom : ParcoursLargeur
+ * Parametres d'entrés : int* Chemin, int N, int end, int &barometre
+ * Parametres de sortie : void
+ * Description : Utilise l'algorithme de Dijkstra pour calculer le chemin le plus court entre la source et la destination.
+ */
 
 void RetrouverCheminFloyd(int** Chemin, int N,int source, int end, int *C, int &barometre)
 {
     int tmp[N], previous, count=0;
+    
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < N; j++)
+        {
+            printf("%d-",Chemin[i][j]);
+        }
+        printf("\n");
+    }
     
     for(int i =0; i<N; i++)
         tmp[i] = -1;

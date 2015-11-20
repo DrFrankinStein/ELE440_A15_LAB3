@@ -1,13 +1,10 @@
-/**
- * Fichier : Node.cpp
- * 
- * Description: Permet de creer et relier des noeuds avec les poids entre eux
- * 
- * Auteur: Julien Lemay
- * 
- * Cree le :    2015-11-06
- * Modif. le :  2015-11-06
+/* 
+ * File:   Node.cpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
  */
+
+// Include
 
 #include "../Header/Node.hpp"
 

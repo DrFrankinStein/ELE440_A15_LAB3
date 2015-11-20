@@ -1,12 +1,13 @@
 /* 
  * File:   MatriceAdjacence.hpp
- * Author: Julien
- *
- * Created on 11 novembre 2015, 17:57
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
  */
 
 #ifndef MATRICEADJACENCE_HPP
 #define	MATRICEADJACENCE_HPP
+
+// Include
 
 #include <cstdlib>
 #include <string>

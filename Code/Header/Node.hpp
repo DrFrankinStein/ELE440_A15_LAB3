@@ -1,16 +1,13 @@
-/**
- * Fichier : Node.hpp
- * 
- * Description: Header de Node.cpp 
- * 
- * Auteur: Julien Lemay
- * 
- * Cree le :    2015-11-06
- * Modif. le :  2015-11-06
+/* 
+ * File:   Node.hpp
+ * Author: Julien Lemay & Alexandre Lessard
+ * Date: 20/11/15
  */
 
 #ifndef _NODE_HPP
 #define	_NODE_HPP
+
+// Include
 
 #include <cstdlib>
 #include <iostream>
